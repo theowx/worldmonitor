@@ -579,11 +579,9 @@ export default defineConfig({
 import { defineConfig, UserConfig } from 'vite'
 
 export default defineConfig(({ command }) => {
-  const config: UserConfig = {
-    /
-  }
+  const config: UserConfig = {}
 
-  // GitHub Pages fix for blank screen
+  // GitHub Pages base path fix
   if (command !== 'serve') {
     config.base = '/worldmonitor/'
   }
