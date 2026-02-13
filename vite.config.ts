@@ -576,16 +576,16 @@ export default defineConfig({
     },
   },
 });
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'  //
+import { defineConfig, UserConfig } from 'vite'
 
 export default defineConfig(({ command }) => {
-  const config = {
-    plugins: [react()],  // 
+  const config: UserConfig = {
+    /
+  }
 
-
+  // GitHub Pages fix for blank screen
   if (command !== 'serve') {
-    config.base = '/worldmonitor/'  //
+    config.base = '/worldmonitor/'
   }
 
   return config
