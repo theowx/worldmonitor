@@ -576,3 +576,19 @@ export default defineConfig({
     },
   },
 });
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'  // or whatever plugin it has
+
+export default defineConfig(({ command }) => {
+  const config = {
+    plugins: [react()],  // keep existing plugins
+    // ... other settings
+  }
+
+  // For GitHub Pages: add base path for production
+  if (command !== 'serve') {
+    config.base = '/worldmonitor/'  // your repo name + trailing slash
+  }
+
+  return config
+})
