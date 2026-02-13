@@ -1,14 +1,12 @@
 import { defineConfig } from 'vite'
-import { fileURLToPath, URL } from 'node:url'
-import path from 'path'
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
+  plugins: [react()],
   base: '/worldmonitor/',
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, './src')
+  build: {
+    rollupOptions: {
+      external: ['highlight.js']
     }
   }
 })
