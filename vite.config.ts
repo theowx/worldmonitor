@@ -581,13 +581,11 @@ import react from '@vitejs/plugin-react'  // or whatever plugin it has
 
 export default defineConfig(({ command }) => {
   const config = {
-    plugins: [react()],  // keep existing plugins
-    // ... other settings
-  }
+    plugins: [react()],  // 
 
-  // For GitHub Pages: add base path for production
+
   if (command !== 'serve') {
-    config.base = '/worldmonitor/'  // your repo name + trailing slash
+    config.base = '/worldmonitor/'  //
   }
 
   return config
