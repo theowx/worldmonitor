@@ -1,5 +1,10 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/worldmonitor/'
+  base: '/worldmonitor/',
+  resolve: {
+    alias: [
+      { find: '@', replacement: '/src' }
+    ]
+  }
 })
